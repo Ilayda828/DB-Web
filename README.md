@@ -62,7 +62,9 @@ Update the connection string in `appsettings.json` to match your local SQL Serve
   "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=DeneDB;Trusted_Connection=True;TrustServerCertificate=True;"
 }
 
-### **📂 Repository Structure**
+---
+
+## **📂 Repository Structure**
 ├── Documentation/       # Academic reports and ER/EER Diagrams (Step 3 & 4)
 ├── Database/            # SQL Scripts for DDL, DML, and Automation
 ├── DeneDBMS.WebApp/     # ASP.NET Core Source Code
