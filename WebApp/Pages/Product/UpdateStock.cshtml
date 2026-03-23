@@ -1,0 +1,93 @@
+@page
+@model WebApp.Pages.Product.UpdateStockModel
+@{
+    ViewData["Title"] = "Inventory Management";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center text-primary">@ViewData["Title"]</h2>
+
+    <div id="updatePanel">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <div class="card mb-5 border-info shadow">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i> Quick Stock Update</h5>
+            </div>
+            <div class="card-body bg-light">
+                <form method="post" id="updateForm">
+                    <input type="hidden" asp-for="ProductID" id="hiddenPid" />
+                    <div class="row align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">Target Product ID</label>
+                            <input type="text" id="displayPid" class="form-control" placeholder="Select from table below" readonly />
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">Operation Type</label>
+                            <select asp-for="UpdateType" class="form-select border-primary text-primary">
+                                <option value="set">Set Direct Value (=)</option>
+                                <option value="add">Add to Current (+)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label asp-for="StockValue" class="form-label fw-bold">Quantity</label>
+                            <input asp-for="StockValue" class="form-control" type="number" required min="0" />
+                        </div>
+
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success w-100 py-2 shadow-sm">
+                                <i class="bi bi-save me-1"></i> Commit Update
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="table-container">
+        <partial name="_ProductTablePartial" model="Model" />
+    </div>
+
+    <div class="mt-4 text-center">
+        <a asp-page="/Employee/Dashboard" class="btn btn-outline-secondary btn-lg"><i class="bi bi-house-door"></i> Back to Dashboard</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // 1: Tablodaki update'e basýnca sayfayý yukarý kaydýr ve ID'yi ayarla
+        function prepareUpdate(id, currentStock) {
+            document.getElementById('hiddenPid').value = id;
+            document.getElementById('displayPid').value = "Product ID: " + id;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Opsiyonel: Giriþ kutusunu odakla
+            const input = document.querySelector('input[name="StockValue"]');
+            input.focus();
+            input.value = currentStock;
+        }
+
+        // 4 & 5: Sayfa yenilemeden tablo yükleme ve sýralama
+        function loadSortedTable(sortOrder) {
+            const container = document.getElementById('table-container');
+            container.style.opacity = '0.4';
+
+            fetch(`?handler=TableOnly&sortOrder=${sortOrder}`)
+                .then(r => r.text())
+                .then(html => {
+                    container.innerHTML = html;
+                    container.style.opacity = '1';
+                });
+        }
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}

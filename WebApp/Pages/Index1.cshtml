@@ -1,0 +1,75 @@
+    @page
+    @model IndexModel
+    @{
+        ViewData["Title"] = "Home page";
+    }
+        
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+        <div class="mt-5">
+            <h2 class="mb-4">Invoice Management System</h2>
+        
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-plus-circle display-4 text-primary"></i>
+                            <h5 class="card-title mt-3">New Invoice</h5>
+                            <p class="card-text">Create invoice (INSERT)</p>
+                            <a asp-page="/Invoice/Create" class="btn btn-primary">Create</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-bar-chart-line display-4 text-success"></i>
+                            <h5 class="card-title mt-3">Customer Report</h5>
+                            <p class="card-text">View summary (SELECT)</p>
+                            <a asp-page="/Reports/CustomerSummary" class="btn btn-success">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-repeat display-4 text-warning"></i>
+                            <h5 class="card-title mt-3">Update Stock</h5>
+                            <p class="card-text">Edit product stock (UPDATE)</p>
+                            <a asp-page="/Product/UpdateStock" class="btn btn-warning">Update</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-trash display-4 text-danger"></i>
+                            <h5 class="card-title mt-3">Delete Invoice</h5>
+                            <p class="card-text">Remove invoice (DELETE)</p>
+                            <a asp-page="/Invoice/DeleteInvoice" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card text-center shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <i class="bi bi-person-plus display-4 text-info"></i>
+                            <h5 class="card-title mt-3">New Customer</h5>
+                            <p class="card-text text-muted">Register a new customer (INSERT)</p>
+                            <div>
+                                <a asp-page="/Customer/Create" class="btn btn-info text-white">Create</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

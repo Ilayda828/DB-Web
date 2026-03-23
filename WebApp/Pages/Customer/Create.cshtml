@@ -1,0 +1,41 @@
+﻿@page
+@model WebApp.Pages.Customer.CreateModel
+@{
+    ViewData["Title"] = "Add New Customer";
+}
+
+<div class="container mt-4">
+    <h2>Add New Customer</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input asp-for="NewCustomer.Name" class="form-control" placeholder="John Doe" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input asp-for="NewCustomer.Email" type="email" class="form-control" placeholder="john@example.com" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input asp-for="NewCustomer.Phone" class="form-control" placeholder="XXX-XXX-XXXX" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <textarea asp-for="NewCustomer.Address" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Customer Type</label>
+                    <select asp-for="NewCustomer.CustomerType" class="form-select">
+                        <option value="Individual">Individual</option>
+                        <option value="Corporate">Corporate</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Save Customer</button>
+                <a asp-page="/Employee/Dashboard" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

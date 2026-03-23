@@ -1,0 +1,106 @@
+﻿@page
+@model WebApp.Pages.Customer.InfoManagementModel
+@{
+    ViewData["Title"] = "Account Management";
+}
+
+<div class="container-fluid min-vh-100 bg-light-gray py-5" style="background-color: #f1f3f5;">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold text-dark mb-0">
+                    <i class="bi bi-gear-wide-connected text-warning me-2"></i>Account Settings
+                </h2>
+                <a asp-page="/Customer/Dashboard" class="btn btn-outline-secondary shadow-sm bg-white">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+                </a>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
+                <div class="card-header bg-warning text-dark py-3 border-0">
+                    <h5 class="card-title mb-0 fw-bold text-center">
+                        <i class="bi bi-pencil-square me-2"></i>Update Information
+                    </h5>
+                </div>
+                <div class="card-body bg-white p-4">
+                    <form method="post" asp-page-handler="Update">
+                        <input type="hidden" asp-for="CurrentCustomer.CustomerID" />
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted">Full Name</label>
+                            <input asp-for="CurrentCustomer.Name" class="form-control" required />
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-muted">Email Address</label>
+                                <input asp-for="CurrentCustomer.Email" type="email" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-muted">Phone Number</label>
+                                <input asp-for="CurrentCustomer.Phone" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted">Address</label>
+                            <textarea asp-for="CurrentCustomer.Address" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-warning btn-lg fw-bold shadow-sm">
+                                <i class="bi bi-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card border-danger shadow-sm rounded-4 overflow-hidden">
+                <div class="card-header bg-danger text-white py-3 border-0">
+                    <h5 class="card-title mb-0 fw-bold text-center">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Danger Zone
+                    </h5>
+                </div>
+                <div class="card-body bg-white p-4 text-center">
+                    <p class="text-muted">
+                        Deleting your account will remove all your data permanently.
+                        <strong>This action cannot be undone.</strong>
+                    </p>
+                    <button type="button" class="btn btn-outline-danger px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        Delete My Account
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title fw-bold">Confirm Deletion</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <p class="fs-5">Are you sure you want to delete your account?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                <form method="post" asp-page-handler="Delete">
+                    <input type="hidden" name="id" value="@Model.CurrentCustomer?.CustomerID" />
+                    <button type="submit" class="btn btn-danger px-4">Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .rounded-4 {
+        border-radius: 1rem !important;
+    }
+</style>

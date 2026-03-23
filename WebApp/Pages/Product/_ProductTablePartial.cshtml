@@ -1,0 +1,50 @@
+﻿@model WebApp.Pages.Product.UpdateStockModel
+@{
+    string GetNextSort(string current, string field) => current == $"{field}_asc" ? $"{field}_desc" : $"{field}_asc";
+    string GetIcon(string current, string field)
+    {
+        if (current == $"{field}_asc") return "bi-sort-up";
+        if (current == $"{field}_desc") return "bi-sort-down";
+        return "bi-arrow-down-up text-muted small";
+    }
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between">
+        <h5 class="mb-0">Product Catalog</h5>
+        <small class="text-white-50">Click headers to sort</small>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th><button class="btn btn-link btn-sm text-dark fw-bold p-0" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "id")')">ID <i class="bi @GetIcon(Model.CurrentSort, "id")"></i></button></th>
+                        <th><button class="btn btn-link btn-sm text-dark fw-bold p-0" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "name")')">Name <i class="bi @GetIcon(Model.CurrentSort, "name")"></i></button></th>
+                        <th><button class="btn btn-link btn-sm text-dark fw-bold p-0" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "price")')">Price <i class="bi @GetIcon(Model.CurrentSort, "price")"></i></button></th>
+                        <th><button class="btn btn-link btn-sm text-dark fw-bold p-0" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "stock")')">Stock <i class="bi @GetIcon(Model.CurrentSort, "stock")"></i></button></th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.AllProducts)
+                    {
+                        <tr>
+                            <td>@product.ProductID</td>
+                            <td>@product.Name</td>
+                            <td>$@product.Price.ToString("N2")</td>
+                            <td>
+                                <span class="badge @(product.Stock < 10 ? "bg-danger" : "bg-success")">@product.Stock</span>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm btn-primary px-3" onclick="prepareUpdate('@product.ProductID', '@product.Stock')">
+                                    <i class="bi bi-pencil"></i> Select
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

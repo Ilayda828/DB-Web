@@ -1,0 +1,78 @@
+﻿@page
+@model WebApp.Pages.Customer.DashboardModel
+@{
+    ViewData["Title"] = "Customer Portal";
+}
+
+<div class="container-fluid min-vh-100 bg-light-gray py-4">
+    <div class="row align-items-center mb-5 px-3">
+        <div class="col-md-8">
+            <h4 class="text-secondary border-start border-4 border-primary ps-3 mb-0">
+                Welcome back, <span class="text-dark fw-bold">@Model.CustomerName</span>
+            </h4>
+        </div>
+        <div class="col-md-4 text-end">
+            <a asp-page="/Index" class="btn btn-outline-danger shadow-sm px-4 fw-bold">
+                <i class="bi bi-box-arrow-right me-2"></i> Sign Out
+            </a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center g-4 mt-2">
+        <div class="col-md-5">
+            <div class="card h-100 shadow-sm border-0 bg-white transition-hover">
+                <div class="card-body text-center p-5">
+                    <div class="display-4 text-primary mb-3">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                    <h3 class="card-title fw-bold">Personal Info</h3>
+                    <p class="card-text text-muted">
+                        View your registered contact details, address, and profile information.
+                    </p>
+                    <a asp-page="/Customer/PersonalInfo" class="btn btn-primary btn-lg px-5 mt-3 shadow-sm">
+                        View Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card h-100 shadow-sm border-0 bg-white transition-hover">
+                <div class="card-body text-center p-5">
+                    <div class="display-4 text-warning mb-3">
+                        <i class="bi bi-gear-wide-connected"></i>
+                    </div>
+                    <h3 class="card-title fw-bold">Info Management</h3>
+                    <p class="card-text text-muted">
+                        Update your information or manage your account settings and security.
+                    </p>
+                    <a asp-page="/Customer/InfoManagement" class="btn btn-warning text-dark btn-lg px-5 mt-3 shadow-sm">
+                        Manage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Arka plan için hafif ton farkı */
+    .bg-light-gray {
+        background-color: #f1f3f5; /* Kartların beyazından (#fff) ayrılması için */
+    }
+
+    /* Kart geçiş efekti */
+    .transition-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .transition-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.12) !important;
+        }
+
+    /* Buton ikon hizalaması */
+    .bi-box-arrow-right {
+        vertical-align: middle;
+    }
+</style>

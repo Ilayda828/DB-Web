@@ -1,0 +1,71 @@
+﻿@page
+@model WebApp.Pages.Reports.CustomerSummaryModel
+@{
+    ViewData["Title"] = "Customer Management";
+}
+
+<div class="container mt-4">
+    @Html.AntiForgeryToken()
+
+    <div id="management-panel" class="mb-4" style="display: none;">
+        <div id="panel-card" class="card shadow">
+            <div id="panel-header" class="card-header fw-bold d-flex justify-content-between">
+                <span id="panel-title">İşlem Paneli</span>
+                <button type="button" class="btn-close" onclick="closePanel()"></button>
+            </div>
+            <div class="card-body bg-light" id="panel-content"></div>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div id="table-wrapper"><partial name="_CustomerTablePartial" model="Model" /></div>
+</div>
+
+@section Scripts {
+    <script>
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        function loadSortedTable(f) { fetch(`?handler=TableOnly&sortOrder=${f}`).then(r => r.text()).then(h => document.getElementById('table-wrapper').innerHTML = h); }
+        function closePanel() { document.getElementById('management-panel').style.display = 'none'; }
+
+        function openUpdateAction(id, name, inv, spent) {
+            const p = document.getElementById('management-panel');
+            document.getElementById('panel-card').className = "card border-warning shadow";
+            document.getElementById('panel-header').className = "card-header bg-warning text-dark fw-bold d-flex justify-content-between";
+            document.getElementById('panel-title').innerText = "📝 Müşteri Güncelle";
+            document.getElementById('panel-content').innerHTML = `
+                <form method="post" action="?handler=UpdateCustomer">
+                    <input type="hidden" name="__RequestVerificationToken" value="${token}" /><input type="hidden" name="oldId" value="${id}" />
+                    <div class="row g-3">
+                        <div class="col-md-2">ID <input type="number" name="newId" class="form-control" value="${id}"></div>
+                        <div class="col-md-4">Ad <input type="text" name="name" class="form-control" value="${name}"></div>
+                        <div class="col-md-2">Fatura <input type="number" name="totalInvoices" class="form-control" value="${inv}"></div>
+                        <div class="col-md-2">Harcama <input type="text" name="totalSpent" class="form-control" value="${spent.replace(',','.')}"></div>
+                        <div class="col-md-2 d-flex align-items-end"><button class="btn btn-success w-100">KAYDET</button></div>
+                    </div>
+                </form>`;
+            p.style.display = 'block'; window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function openDeleteAction(id, name) {
+            const p = document.getElementById('management-panel');
+            document.getElementById('panel-card').className = "card border-danger shadow";
+            document.getElementById('panel-header').className = "card-header bg-danger text-white fw-bold d-flex justify-content-between";
+            document.getElementById('panel-title').innerText = "⚠️ Müşteri Sil";
+            document.getElementById('panel-content').innerHTML = `<p><strong>${name}</strong> silinsin mi?</p>
+                <form method="post" action="?handler=DeleteCustomer&id=${id}">
+                    <input type="hidden" name="__RequestVerificationToken" value="${token}" />
+                    <button class="btn btn-danger">EVET, SİL</button>
+                    <button type="button" class="btn btn-secondary" onclick="closePanel()">VAZGEÇ</button>
+                </form>`;
+            p.style.display = 'block'; window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+}

@@ -1,0 +1,66 @@
+﻿@model WebApp.Pages.Reports.CustomerSummaryModel
+
+@{
+    // Mevcut sıralama durumuna göre bir sonraki sıralama yönünü belirleyen yardımcı fonksiyon
+    string GetNextSort(string current, string field) =>
+        current == $"{field}_asc" ? $"{field}_desc" : $"{field}_asc";
+
+    // Sıralama yönüne göre başlık ikonlarını belirler
+    string GetIcon(string current, string field)
+    {
+        if (current == $"{field}_asc") return "bi-sort-up";
+        if (current == $"{field}_desc") return "bi-sort-down";
+        return "bi-arrow-down-up text-muted small";
+    }
+}
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th style="min-width: 80px;">
+                    <button class="btn btn-link text-white text-decoration-none p-0 w-100 text-start" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "id")')">
+                        ID <i class="bi @GetIcon(Model.CurrentSort, "id") ms-1"></i>
+                    </button>
+                </th>
+                <th>
+                    <button class="btn btn-link text-white text-decoration-none p-0 w-100 text-start" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "name")')">
+                        Customer Name <i class="bi @GetIcon(Model.CurrentSort, "name") ms-1"></i>
+                    </button>
+                </th>
+                <th style="min-width: 120px;">
+                    <button class="btn btn-link text-white text-decoration-none p-0 w-100 text-start" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "inv")')">
+                        Invoices <i class="bi @GetIcon(Model.CurrentSort, "inv") ms-1"></i>
+                    </button>
+                </th>
+                <th style="min-width: 150px;">
+                    <button class="btn btn-link text-white text-decoration-none p-0 w-100 text-start" onclick="loadSortedTable('@GetNextSort(Model.CurrentSort, "spent")')">
+                        Total Spent <i class="bi @GetIcon(Model.CurrentSort, "spent") ms-1"></i>
+                    </button>
+                </th>
+                <th class="text-center" style="min-width: 180px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model.CustomerSummaries)
+            {
+                <tr>
+                    <td class="fw-bold text-center">@s.CustomerID</td>
+                    <td>@s.CustomerName</td>
+                    <td class="text-center"><span class="badge bg-primary rounded-pill">@s.TotalInvoices</span></td>
+                    <td class="text-success fw-bold">$@s.TotalSpent.ToString("N2")</td>
+                    <td class="text-center">
+                        <div class="btn-group gap-2">
+                            <button class="btn btn-sm btn-outline-warning" onclick="openUpdateAction(@s.CustomerID, '@s.CustomerName', @s.TotalInvoices, '@s.TotalSpent')">
+                                <i class="bi bi-pencil"></i> Update
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="openDeleteAction(@s.CustomerID, '@s.CustomerName')">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

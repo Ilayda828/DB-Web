@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\pages\\customer\\infomanagement.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:pages\\customer\\infomanagement.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\pages\\customer\\infomanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:pages\\customer\\infomanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\pages\\customer\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:pages\\customer\\dashboard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|c:\\users\\ercan dayan\\desktop\\school\\25-26\\semeter 1\\database\\proejct\\db ve web\\webapp\\pages\\customer\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9979EE9D-1A6B-7C50-68E9-BD80DFEEF9FE}|WebApp.csproj|solutionrelative:pages\\customer\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customer\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\Dashboard.cshtml",
+              "RelativeToolTip": "Pages\\Customer\\Dashboard.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAE0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T05:05:38.699Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Repositories\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Repositories\\CustomerRepository.cs",
+              "RelativeToolTip": "Repositories\\CustomerRepository.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAUwFkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:51:57.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:49:18.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\Dashboard.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\Dashboard.cshtml.cs",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\Dashboard.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\Dashboard.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:42:54.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InfoManagement.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\InfoManagement.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\InfoManagement.cshtml.cs",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\InfoManagement.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\InfoManagement.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:37:36.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InfoManagement.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\InfoManagement.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customer\\InfoManagement.cshtml",
+              "ToolTip": "C:\\Users\\Ercan DAYAN\\Desktop\\School\\25-26\\semeter 1\\Database\\proejct\\DB ve Web\\WebApp\\Pages\\Customer\\InfoManagement.cshtml",
+              "RelativeToolTip": "Pages\\Customer\\InfoManagement.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAkwGkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-24T05:37:23.597Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
